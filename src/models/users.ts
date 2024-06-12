@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
+import Task from "./tasks";
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -20,7 +22,13 @@ const userSchema = new mongoose.Schema({
 
   //!todo: have to add the ref of the tasks schema/model
   //? for that first you have to create the task model and import it in here
-  
+  tasks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Task",
+    },
+  ],
+
 });
 
 // Hash the password before saving it to the database
