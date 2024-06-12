@@ -17,6 +17,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     min: 6,
   },
+
+  //!todo: have to add the ref of the tasks schema/model
+  //? for that first you have to create the task model and import it in here
+  
 });
 
 // Hash the password before saving it to the database
