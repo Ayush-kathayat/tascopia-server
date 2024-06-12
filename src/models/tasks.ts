@@ -7,12 +7,6 @@ const taskSchema = new mongoose.Schema({
     min: 6,
     trim: true,
   },
-  description: {
-    type: String,
-    required: true,
-    min: 6,
-    trim : true,
-  },
   completed: {
     type: Boolean,
     default: false,
