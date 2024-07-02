@@ -3,7 +3,7 @@ import express from 'express';
 
 //todo : import the controller
 
-//! todo :  intialize the passport
+
 
 
 const userRouter = express.Router();
