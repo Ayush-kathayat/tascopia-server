@@ -1,5 +1,4 @@
 import express from "express";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import User from "../models/users"; // importing the user model
 
@@ -33,20 +32,13 @@ const Register = async (req: express.Request, res: express.Response) => {
       try {
         await newUser.save();
 
-        // Create the JWT token
-        const token = jwt.sign({ email }, "shhhhh");
-
-        // Set the cookie with token in the browser
-        res.cookie("token", token, { httpOnly: true });
-
         // Send the token in the response
         res.json({
           user: {
             username,
             email,
-            password: hash, // Do not send back the password
+            password: hash, // Do not send back the password //! just send back the hashed password
           },
-          JWT_token : token,
         });
       } catch (saveError) {
         return res.status(500).json({ msg: "Error saving the user" });
