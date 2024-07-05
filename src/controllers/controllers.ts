@@ -4,4 +4,8 @@ import Register from "./register";
 import Login from "./login";
 import Logout from "./logout";
 
-export { Register , Login , Logout};
+//! TASKS CONTROLLERS
+
+import CreateTask from "./createTask";
+
+export { Register , Login , Logout, CreateTask};

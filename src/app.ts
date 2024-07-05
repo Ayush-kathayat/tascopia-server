@@ -5,6 +5,7 @@ import connectDB from "./config/databaseConnection";
 
 //! IMPORTING ROUTES
 import userRouter from "./routes/userRoutes";
+import taskRouter from "./routes/taskRoutes";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 //! MIDDLEWARES for routes
 app.use("/api/v3", userRouter); // using the user routes
+app.use("/api/v3", taskRouter); // using the task routes
 
 //! Db connection
 connectDB();
