@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    // other options...
+    "typeRoots": ["./node_modules/@types", "./types"], // Adjusted to point to a directory
+    "esModuleInterop": true
+    // "skipLibCheck": true, // Optional, to skip library type checking
+    // Consider if you want to disable these checks:
+    // "noUnusedLocals": false,
+    // "noUnusedParameters": false
+  }
+  // other configurations...
+}

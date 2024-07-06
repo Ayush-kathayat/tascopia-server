@@ -1,6 +1,9 @@
-import { Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/users";
+
+import { IGetUserAuthInfoRequest } from "../../types/types";
+
 
 
 // Assuming JwtPayload is an interface that includes the properties of your token's payload
@@ -10,16 +13,16 @@ interface JwtPayload {
 }
 
 
-
-
-
 const authMiddleware = async (
-  req: Request,
+  req: IGetUserAuthInfoRequest,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const token = req.cookies["token"]; // Access the token stored in the cookie
+
+    //! you can use the bearer token or cookie doesn't matter 
+    // const token = req.headers.authorization?.split(' ')[1]; // Assuming token is sent as "Bearer <token>"
+    const token = req.cookies['token']; // Access the token stored in the cookie
     if (!token) {
       return res.status(401).json({ message: "No token provided" });
     }
@@ -32,7 +35,7 @@ const authMiddleware = async (
     // Optionally, find the user in the database
     const user = await User.findOne({ email: decoded.email });
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" , email : decoded.email});
     }
 
     // Attach user to the request object
