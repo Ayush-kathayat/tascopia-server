@@ -1,14 +1,9 @@
 
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { ObjectId } from 'mongodb';
 import Task from "./tasks";
 
-interface IUser extends Document {
-  username: string;
-  email: string;
-  password: string;
-  tasks: ObjectId[];
-}
+
 
 const UserSchema: Schema = new Schema({
   username: { type: String, required: true },
@@ -17,8 +12,7 @@ const UserSchema: Schema = new Schema({
   tasks: [{ type: Schema.Types.ObjectId, ref: Task }]
 });
 
-const User = mongoose.model<IUser>('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 
 export default User;
-export { IUser }; // Export the IUser interface for use in other files

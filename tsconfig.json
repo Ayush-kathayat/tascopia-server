@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    // other options...
-    "typeRoots": ["./node_modules/@types", "./custom.d.ts"],
-    "esModuleInterop": true
-  },
-  // other configurations...
-}
