@@ -7,5 +7,6 @@ import Logout from "./logout";
 //! TASKS CONTROLLERS
 
 import CreateTask from "./createTask";
+import DeleteTask from "./deleteTask";
 
-export { Register , Login , Logout, CreateTask};
+export { Register , Login , Logout, CreateTask, DeleteTask};

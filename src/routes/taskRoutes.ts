@@ -2,7 +2,7 @@
 
 import express from "express";
 
-import { CreateTask} from "../controllers/controllers";
+import { CreateTask, DeleteTask} from "../controllers/controllers";
 
 
 const taskRouter = express.Router();
@@ -10,6 +10,7 @@ const taskRouter = express.Router();
 //! todo  : NOW use the controllers 
 
 taskRouter.post("/addtask", CreateTask);
+taskRouter.delete("/deletetask/:taskId", DeleteTask);
 
 
 
