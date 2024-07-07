@@ -2,15 +2,18 @@
 
 import express from "express";
 
-import { CreateTask, DeleteTask} from "../controllers/controllers";
+import { CreateTask, DeleteTask , CreateSubtask} from "../controllers/controllers";
+
+
 
 
 const taskRouter = express.Router();
 
 //! todo  : NOW use the controllers 
 
-taskRouter.post("/addtask", CreateTask);
-taskRouter.delete("/deletetask/:taskId", DeleteTask);
+taskRouter.post("/addtask",CreateTask);
+taskRouter.delete("/deletetask/:taskId",DeleteTask);
+taskRouter.post("/addsubtask/:taskId",CreateSubtask);
 
 
 

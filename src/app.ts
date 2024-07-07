@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/databaseConnection";
 
 import authMiddleware from "./middlewares/authMiddleware";
+
 //! IMPORTING ROUTES
 import userRouter from "./routes/userRoutes";
 import taskRouter from "./routes/taskRoutes";
@@ -20,7 +21,7 @@ app.use(cookieParser());
 
 //! MIDDLEWARES for routes
 app.use("/api/v3", userRouter); // using the user routes
-app.use("/api/v3", authMiddleware, taskRouter); // using the task routes
+app.use("/api/v3", authMiddleware, taskRouter); // Protecting all task routes
 
 //! Db connection
 connectDB();
