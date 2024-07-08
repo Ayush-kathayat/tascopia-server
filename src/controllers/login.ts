@@ -14,6 +14,7 @@ const Login = async (req: express.Request, res: express.Response) => {
   if (!email || !password) {
     return res.status(400).json({ msg: "Please enter all the fields" });
   }
+  
 
   //! Check if the user email exists in the database
 

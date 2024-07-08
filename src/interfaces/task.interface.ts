@@ -1,4 +1,4 @@
-import { Document} from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 import ISubtask from './subtask.interface';
 
@@ -6,7 +6,7 @@ import ISubtask from './subtask.interface';
 interface ITask extends Document {
   title: string;
   description: string;
-  subtasks: ISubtask[];
+  subtasks: Types.ObjectId[] | ISubtask[];
 }
 
 export default ITask;
