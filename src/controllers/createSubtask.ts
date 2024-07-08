@@ -39,6 +39,7 @@ const CreateSubtask = async (
     //? adding the subtask ID to the task
 
     task.subtasks.push(savedSubtask._id);
+    await task.save();
     res.status(201).json(savedSubtask);
 
 
