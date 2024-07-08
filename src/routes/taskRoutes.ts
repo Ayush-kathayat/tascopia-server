@@ -2,7 +2,7 @@
 
 import express from "express";
 
-import { CreateTask, DeleteTask , CreateSubtask} from "../controllers/controllers";
+import { CreateTask, DeleteTask , CreateSubtask ,showTaskAndSubtasks} from "../controllers/controllers";
 
 
 
@@ -14,6 +14,7 @@ const taskRouter = express.Router();
 taskRouter.post("/addtask",CreateTask);
 taskRouter.delete("/deletetask/:taskId",DeleteTask);
 taskRouter.post("/addsubtask/:taskId",CreateSubtask);
+taskRouter.get("/show" , showTaskAndSubtasks)
 
 
 

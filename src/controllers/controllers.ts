@@ -16,9 +16,10 @@ import DeleteTask from "./deleteTask";
 
 
 //? Showcase
+import showTaskAndSubtasks from "./showTask&Subtask";
 
 
 //? Update
 
 
-export { Register , Login , Logout, CreateTask, CreateSubtask, DeleteTask};
+export { Register , Login , Logout, CreateTask, CreateSubtask, DeleteTask , showTaskAndSubtasks};
