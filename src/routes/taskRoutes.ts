@@ -2,7 +2,7 @@
 
 import express from "express";
 
-import { CreateTask, DeleteTask , CreateSubtask ,showTaskAndSubtasks , deleteSubtaskFromTask} from "../controllers/controllers";
+import { CreateTask, DeleteTask , CreateSubtask ,showTaskAndSubtasks , deleteSubtaskFromTask, UpdateTask} from "../controllers/controllers";
 
 
 
@@ -16,6 +16,7 @@ taskRouter.delete("/deletetask/:taskId",DeleteTask);
 taskRouter.post("/addsubtask/:taskId",CreateSubtask);
 taskRouter.get("/show" , showTaskAndSubtasks);
 taskRouter.delete("/deletesubtask/:taskId/:subtaskId",deleteSubtaskFromTask);
+taskRouter.put("/updatetask/:taskId",UpdateTask);
 
 
 

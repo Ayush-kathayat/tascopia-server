@@ -22,5 +22,7 @@ import deleteSubtaskFromTask from "./deleteSubtask";
 
 //? Update
 
+import UpdateTask from "./updateTask";
 
-export { Register , Login , Logout, CreateTask, CreateSubtask, DeleteTask , showTaskAndSubtasks , deleteSubtaskFromTask};
+
+export { Register , Login , Logout, CreateTask, CreateSubtask, DeleteTask , showTaskAndSubtasks , deleteSubtaskFromTask ,UpdateTask };
